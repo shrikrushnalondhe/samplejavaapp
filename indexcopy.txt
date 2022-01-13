@@ -1,0 +1,12 @@
+---
+- name: demo
+  hosts: demo
+  become_user: root
+  become_method: sudo
+  become: yes
+- hosts: demo
+  tasks:
+  - name: Ansible copy files from a directory to remote server
+    copy:
+      src: /home/jenkins/index.html
+      dest: /var/www/html/
